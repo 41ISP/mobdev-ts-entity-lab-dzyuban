@@ -1,4 +1,14 @@
 export function EntityForm() {
+
+const initialDino: InputDinosaur = {
+    type: "",
+    family: "",
+    weight: 0,
+    height: 0,
+    age: 0,
+    period: ""
+}
+
     return (
         <form className="form">
             <h2>Добавить сущность</h2>

@@ -18,6 +18,10 @@ export interface dinosaur {
   period?: string
   photo?: Photo
 }
+export type InputDinosaur = Omit<
+  dinosaur,
+  "id" | "documentId" | "photo" | "createdAt" | "updatedAt" | "publishedAt"
+>
 
 export interface Photo {
   id: number

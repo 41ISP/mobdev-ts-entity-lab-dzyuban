@@ -1,4 +1,10 @@
-export function EntityCard() {
+import { api, API_URL } from "../API"
+import { DinoStore } from "../store/DinoStore"
+
+export function EntityCard({
+    type,
+
+})
     return (
         <article className="card">
             <div className="card__cover">

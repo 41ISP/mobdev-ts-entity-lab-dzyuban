@@ -19,6 +19,7 @@ export default function App() {
                 <p className="hint">Загрузка…</p>
                 <p className="hint">Добавьте сущность</p>
                 <div className="grid">
+                    {dinosaurs.data.}
                     <EntityCard />
                 </div>
             </main>

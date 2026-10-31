@@ -16,3 +16,4 @@ const getDinosaur = async (): Promise<IStrapiResponse<dinosaur[]>> =>  {
     
     return res.data
 }
+export const api = { getDinosaur }
