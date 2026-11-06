@@ -1,8 +1,11 @@
-import { api, API_URL } from "../API"
-import { DinoStore } from "../store/DinoStore"
+import { API_URL } from "../API"
+import type { Dinosaur } from "../Types"
 
-export function EntityCard({
-    type,
+interface EntityCardprops{
+    dinosaur: Dinosaur;
+}
+export function EntityCard({ dinosaur }: 
+    EntityCardprops
 
 })
     return (
@@ -26,7 +29,7 @@ export function EntityCard({
             </div>
 
             <footer className="card__footer">
-                <strong>100 Р</strong>
+                <strong>{dinosaur.weight}</strong>
                 <button className="link-btn">Удалить</button>
             </footer>
         </article>

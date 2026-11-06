@@ -2,8 +2,16 @@ export interface IStrapiResponse<T> {
   data: T
   meta?: Meta
 }
+export const  PERIOD = ["Triassic", "Jurassic", "Cretaceous"] as const;
 
-export interface dinosaur {
+export type period = (typeof PERIOD)[number]
+
+export const PERIOD_LABELS: Record<period, string> = {
+  Triassic: "Триассовый",
+  Jurassic: "Юрский",
+  Cretaceous: "Меловой"
+}
+export interface Dinosaur {
   id: number
   documentId: string
   type: string
@@ -15,7 +23,7 @@ export interface dinosaur {
   updatedAt: string
   publishedAt: string
   age: number
-  period?: string
+  period?: period
   photo?: Photo
 }
 export type InputDinosaur = Omit<
