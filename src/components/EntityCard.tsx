@@ -1,35 +1,52 @@
 import { API_URL } from "../API"
 import type { Dinosaur } from "../Types"
 
-interface EntityCardprops{
-    dinosaur: Dinosaur;
-}
-export function EntityCard({ dinosaur }: 
-    EntityCardprops
+interface IEntityCard extends Dinosaur {}
 
-})
+export function EntityCard({
+    type,
+    description,
+    family,
+    weightinKg,
+    lengthInMetters,
+    ageMillionsYears,
+    period,
+    photo,
+}: IEntityCard) {
     return (
         <article className="card">
             <div className="card__cover">
-                <img src="x" alt="Сущность" />
-                <span>Название если нет картинки</span>
-                <b className="card__badge">Бейдж</b>
+                {photo ? (
+                    <img
+                        src={API_URL + photo[0].url}
+                        alt={photo[0].alternativeText}
+                    />
+                ) : (
+                    <span>{type[0]}</span>
+                )}
             </div>
 
             <div className="card__body">
-                <h3>Название</h3>
+                <h3>{type}</h3>
 
-                <p className="card__desc">Описание</p>
+                {family && <p className="card__meta">{family}</p>}
+                {ageMillionsYears && <p className="card__meta">{ageMillionsYears} млн лет</p>}
 
-                <p className="card__meta">Чекбокс: да</p>
+                {description && (
+                    <p className="card__desc">{description}</p>
+                )}
 
-                <div className="chips">
-                    <span className="chip">Популярное</span>
-                </div>
+                {period && (
+                    <div className="chips">
+                        <span className="chip">{period}</span>
+                    </div>
+                )}
             </div>
 
             <footer className="card__footer">
-                <strong>{dinosaur.weight}</strong>
+                {weightinKg && <strong>{weightinKg} кг</strong>}
+                {lengthInMetters && <strong>{lengthInMetters} м</strong>}
+
                 <button className="link-btn">Удалить</button>
             </footer>
         </article>

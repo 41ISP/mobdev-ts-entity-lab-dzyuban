@@ -17,17 +17,17 @@ export interface Dinosaur {
   type: string
   description?: string
   family: string
-  weight: number
-  length: number
+  weightinKg: number
+  lengthInMetters: number
   createdAt: string
   updatedAt: string
   publishedAt: string
-  age: number
+  ageMillionsYears: number
   period?: period
-  photo?: Photo
+  photo?: Photo[]
 }
 export type InputDinosaur = Omit<
-  dinosaur,
+  Dinosaur,
   "id" | "documentId" | "photo" | "createdAt" | "updatedAt" | "publishedAt"
 >
 

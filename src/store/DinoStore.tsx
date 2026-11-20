@@ -1,9 +1,9 @@
 import { create } from "zustand"
-import type { dinosaur, IStrapiResponse } from "../Types"
+import type { Dinosaur, IStrapiResponse } from "../Types"
 import { api } from "../API"
 
 interface DinoStorage {
-    Dinos: IStrapiResponse<dinosaur[]> | undefined
+    Dinos: IStrapiResponse<Dinosaur[]> | undefined
     getDinosaur: () => void
 }
 
